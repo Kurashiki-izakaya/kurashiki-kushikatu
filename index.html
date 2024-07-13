@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>居酒屋「久良四季」</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: url('top柄.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .dinosaur-image {
+            height: 600px; /* 縦幅を倍に設定 */
+            width: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .slideshow-container {
+            height: 550px;
+            width: 75%; /* 横幅を0.75倍に設定 */
+            margin: 0 auto;
+            background: #fff;
+        }
+        header {
+            text-align: center;
+        }
+        header h1 {
+            font-family: 'Satisfy', cursive;
+            color: gold;
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>久良四季</h1>
+        <a href="tel:052-411-4119">予約・お持ち帰り 052-411-4119</a>
+        <img src="恐竜.png" alt="恐竜" class="dinosaur-image">
+    </header>
+
+    <nav>
+        <a href="index.html">トップ</a>
+        <a href="menu.html">メニュー</a>
+        <a href="takeout.html">お持ち帰り</a>
+        <a href="special.html">特別メニュー</a>
+        <a href="contact.html">店舗情報</a>
+        <a href="sns.html">SNS</a>
+    </nav>
+
+    <div class="content">
+        <section id="top" class="section">
+            <div class="slideshow-container">
+                <div class="slides">
+                    <img src="外観.jpg" style="width:100%; height:100%;">
+                </div>
+                <div class="slides">
+                    <img src="くしかつ.jpeg" style="width:100%; height:100%;">
+                </div>
+                <div class="slides">
+                    <img src="味噌串カツ (2).jpg" style="width:100%; height:100%;">
+                </div>
+                <!-- 追加のスライド -->
+            </div>
+            <div class="dot-container">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <!-- 追加のドット -->
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 久良四季</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000); // 2秒ごとに画像を変更
+        }
+    </script>
+</body>
+</html>
